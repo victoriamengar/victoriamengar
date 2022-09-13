@@ -1,0 +1,55 @@
+---
+title: "Developing Data Products Final Project"
+author: "Victoria Menendez Garcia"
+date: "`r Sys.Date()`"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Kaplan-Meier analysis Shiny App
+
+Kaplan-Meier estimate is one of the best options to be used to measure the fraction of subjects living for a certain amount of time after treatment. In clinical trials or community trials, the effect of an intervention is assessed by measuring the number of subjects survived or saved after that intervention over a period of time. The time starting from a defined point to the occurrence of a given event, for example death is called as survival time and the analysis of group data as survival analysis. 
+
+Kaplan-Meier analysis needs the data to be in groups. To classify them, we dichotomize data in HIGH and LOW values, establishing a cut point.
+
+This shiny app creates a Kaplan-Meier plot using example data (TCPTP pathway in 25 Hodgkin's Lymphoma patients), where the user can pick the percentage to dichotomize.
+
+## Example of Kaplan-Meier plot with 50% cut:
+
+This is a preview of the dichotomized data:
+
+```{r, echo = FALSE}
+#I use as input the dichotomized model directly:
+data <- data.frame("patient" = c("HL10", "HL12", "HL13", "HL14", "HL15", "HL17", "HL19", "HL2", "HL20", "HL21", "HL22", "HL23", "HL24", "HL25", "HL28", "HL29", "HL3", "HL4", "HL40", "HL41", "HL47", "HL5", "HL6", "HL8", "HL9"), "TCPTP_pathway" = c("LOW", "HIGH", "HIGH", "LOW", "HIGH", "HIGH", "HIGH", "LOW", "HIGH", "HIGH", "LOW", "HIGH", "HIGH", "HIGH", "HIGH", "HIGH", "LOW", "LOW", "LOW", "LOW", "LOW", "LOW", "LOW", "LOW", "LOW"), "FFS" = c(140.93, 5.1, 5.73, 34.4, 10.1, 4.07, 37.33, 49.23, 5.03, 6.13, 4.07, 6.07, 18.2, 37.33, 16.83, 16.27, 126.23, 59.3, 106.7, 82.9, 72.67, 10, 51.93, 6.1, 7.1), "fustat" = c(0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1))
+
+head(data)
+
+```
+
+## Internal code to calculate the model and plot it
+
+link to Shiny App: *https://victoriamengar.shinyapps.io/shinyapp/*
+link to GitHub files: *https://github.com/victoriamengar/victoriamengar/tree/main/DevelopingDataProducts*
+
+```{r echo = TRUE}
+suppressPackageStartupMessages(library(survival))
+suppressPackageStartupMessages(library(survminer))
+survobj <- Surv(time = data[,3], event = data[,4], type = "right")
+levels <- unlist(data[,2])
+fit1 <- surv_fit(survobj ~ levels, data = data)
+figure <- ggsurvplot(fit1, pval = TRUE, pval.method=TRUE, 
+risk.table = "abs_pct", fontsize = 4, font.tickslab = c(12), 
+legend.title = "", font.title = c(16, "bold", "darkblue"), 
+font.legend = c(11, "plain"), tables.y.text = FALSE, 
+xlab = "FFS in months", 
+title = "Dichotomization and Kaplan-Meier analysis of TCPTP pathway")
+```
+
+## FINAL PLOT
+
+```{r echo=FALSE, fig.height=5.5, fig.width=8}
+print(figure)
+```

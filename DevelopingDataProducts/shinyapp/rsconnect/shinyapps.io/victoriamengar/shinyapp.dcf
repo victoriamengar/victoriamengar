@@ -1,0 +1,11 @@
+name: shinyapp
+title:
+username:
+account: victoriamengar
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6994433
+bundleId: 6296844
+url: https://victoriamengar.shinyapps.io/shinyapp/
+when: 1663058465.08203
+lastSyncTime: 1663058465.08205
