@@ -8,11 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-<<<<<<< HEAD
-set VIRTUAL_ENV=C:\Users\vikim\Desktop\Mirar\ITCL\victoriamengar\openai-env
-=======
-set VIRTUAL_ENV=C:\Users\Victoria\Desktop\MIRAR\ITCL\victoriamengar\ITCL_project\openai-env
->>>>>>> 97156e9e1a25c6f96492afd59a4a7175e9d781f8
+set VIRTUAL_ENV=C:\Users\vikim\Desktop\Mirar\ITCL\victoriamengar\ITCL_project\openai-env
 
 if not defined PROMPT set PROMPT=$P$G
 
