@@ -1,5 +1,6 @@
 # In PowerShell execute python -m venv openai-env (only the first time)
 # Then activate it in CMD with ITCL_project\openai-env\Scripts\activate
+# The .env file should be outside of the environment folder
 
 from openai import OpenAI
 import os
