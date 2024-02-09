@@ -1,4 +1,4 @@
-# In PowerShell execute python -m venv openai-env
+# In PowerShell execute python -m venv openai-env (only the first time)
 # Then activate it in CMD with ITCL_project\openai-env\Scripts\activate
 
 from openai import OpenAI
