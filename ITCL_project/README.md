@@ -15,11 +15,16 @@ cd ITCL-project
 3. Install the required Python packages using pip:
 
 pip install -r openai
+
 pip install -r dotenv
 
 4. Set up your OpenAI API key by creating a .env file in the project directory and adding your API key:
 
 OPENAI_API_KEY=your-api-key-goes-here
+
+5. Activate the openai-env environment
+Activate it in CMD with
+ITCL_project\openai-env\Scripts\activate
 
 ## Usage
 1. Run the run_dialogue.py script:
