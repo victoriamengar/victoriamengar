@@ -1,7 +1,8 @@
 # This script executes all functions and conditions to create the dialogue
-
 # functions.py is the file with function definitions
 from functions import dialogue, get_user_message
+import random
+from questions import personal_characteristics
 
 # Preparing ANSI code colours for the user
 PURPLE = '\033[95m'
@@ -27,9 +28,13 @@ conversation.append(user_message)
 
 print(*conversation, sep = "\n")
 
+# Selecting the random prompt to modify the conversation
+personality1 = random.choice(personal_characteristics)
+personality2 = random.choice(personal_characteristics) 
+
 # Executing the first dialogue functions
-conversation = dialogue(character1, conversation)
-conversation = dialogue(character2, conversation)
+conversation = dialogue(character1, conversation, personality1)
+conversation = dialogue(character2, conversation, personality2)
 
 # Loop to continue the dialogue until the user quits
 while True:
@@ -42,5 +47,5 @@ while True:
         break
     
     # Continuing the conversation
-    conversation = dialogue(character1, conversation)
-    conversation = dialogue(character2, conversation)
+    conversation = dialogue(character1, conversation, personality1)
+    conversation = dialogue(character2, conversation, personality2)
