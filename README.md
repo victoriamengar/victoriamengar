@@ -1,5 +1,3 @@
 - 👋 Hi, I’m @victoriamengar
-- 👀 I’m interested in oncology and bioinformatics
-- 🌱 I’m currently learning R programming, Python and SQL
-- 💞️ I’m collaborating on oncology and bioinformatics research projects
-- 📫 How to reach me: victoriamdanderson@gmail.com
+- 👀 I’m interested in machine learning, oncology and bioinformatics
+- 📫 How to reach me: victoriamengar97@gmail.com
