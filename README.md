@@ -1,3 +1,3 @@
-- 👋 Hi, I’m @victoriamengar
-- 👀 I’m interested in machine learning, oncology and bioinformatics
+- 👋 Hi, I’m @victoriamengar, a Senior Health Data Scientist & R Engineer. Specialized in Multi-omics and AI Strategy
+- 👀 I’m interested in Machine Learning, project management, oncology and bioinformatics
 - 📫 How to reach me: victoriamengar97@gmail.com
