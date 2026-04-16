@@ -9,6 +9,9 @@ The .Rmd and the .html files are a presentation with all the instructions and an
 
 ## Instructions:
 
+OPTION 1: Visit https://victoriamengar.shinyapps.io/shinyapp/
+
+OPTION 2: Execute the app in your computer:
 1. Open RStudio.
 2. Set the folder which contains ui.R and server.R files as your working directory (you can do it with the setwd("filepath") function).
 3. Make sure that shiny is loaded with library(shiny). If you don't have this package,install it with install.packages("shiny").
